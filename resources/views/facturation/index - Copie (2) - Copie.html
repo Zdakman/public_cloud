@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Sum Html Textbox Values using jQuery/JavaScript</title>
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script> 
+        <script type="text/javascript" src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+
+
+    <body>
+
+        
+        <input class="my-input" id="slider1" value="0" min="0" max="300" />
+
+        <input class="my-input" id="slider2" value="0" min="0" max="300" />
+
+        <input class="my-input" id="slider3" value="0" min="0" max="300" />
+
+<input  type="text" id="total" value="" />
+
+<script type="text/javascript">
+// just get keyup event
+
+
+$(document).ready(function(e) {
+	
+$( "#slider2,#slider1,#slider3" ).bind( "change", function(event, ui) {
+ 
+ var value1=Number($('#slider1').val()*0.2);
+ var value2=Number($('#slider2').val()*0.02);
+ var value3=Number($('#slider3').val()*0.3);
+ var value=value1+value2+value3;
+ 
+
+console.log(value);
+	
+$('#total').html(Math.floor(value)+" Go");
+});
+});
+
+
+</script>
+    </body>
+</html>

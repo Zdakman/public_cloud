@@ -1,0 +1,171 @@
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.css" /> 
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script> 
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+<style type="text/css">
+
+
+    input.ui-slider-input, .ui-field-contain input.ui-slider-input {
+        display: inline-block;
+        width: 60px;
+        z-index:5;
+        position:absolute;
+        top:0px;
+        right:0%;
+        padding:none;
+        text-align:right;
+        background:#eaeaea;
+
+    }
+    .ui-field-contain{
+        margin-left:15px;	
+    }
+    .ui-bar, .ui-body {
+        clear:none;
+        width:40%;
+        float:left;	
+    }
+    .ui-field-contain label.ui-slider {
+        padding-left: 10px;
+        display: inline-block;
+        float: left;
+        margin: 0 10% 16px 0;
+        vertical-align: top;
+        width: 65%;
+        font-size:14px;
+    }
+    .ui-field-contain div.ui-slider {
+        width: 90%;
+    }
+
+    .ui-shadow-inset {
+        box-shadow:none;
+        border:none;
+        width:20%;
+    }
+    
+    
+    .ui-body-c, .ui-dialog.ui-overlay-c {
+        background:#FFF;
+    }
+    
+    
+    #calculer{
+        width:100%;
+        background:#fafafa;
+        float:left;
+        text-align:left;
+        font-weight:bold;
+        font-family:Helvetica,Arial,  sans-serif;
+        text-align:center;
+    }
+    #calc{
+        width:25%;
+        float:left;
+        padding:5px;
+        margin:10px;
+        border:1px #CCCCCC solid;
+    }
+    #titlecalc{
+        border:1px #CCCCCC solid;
+        background:#fafafa;
+
+    }
+    #calc_title{
+        width:100%;
+        background:#eee;
+    }
+
+
+</style>
+
+<script type="text/javascript">
+
+    $(document).ready(  
+            function (e) {       
+        
+        $(" #slider7,#slider6,#slider5,#slider4,#slider3,#slider2,#slider1").bind("change", function (event, ui) {
+
+            var value1 = Number($('#slider1').val() * 10);
+            var value2 = Number($('#slider2').val() * 1);
+            var value3 = Number($('#slider3').val() * 1);
+            var value4 = Number($('#slider4').val() * 1);
+            var value5 = Number($('#slider5').val() * 1000);
+            var value6 = Number($('#slider6').val() * 1);
+            var value7 = Number($('#slider7').val() * 1);
+            var value8 =   value1 +  value3 + value4 + value5 + value6 + value7    ;
+            var value =  Number( value2 * value8); 
+            
+
+            console.log(value);
+            
+            System.out.println("Name :" +value);
+           
+           
+            $("#day").html(value);
+        });
+
+
+    });
+
+
+</script>
+</head>
+
+<body>
+    <div data-role="page" id="page">
+        
+
+
+        <div data-role="fieldcontain">
+
+            <label for="slider1"><img src="database (3).png" width="30" height="23" /> &nbsp;&nbsp; Espace disque </label>
+            <input type="range" name="slider1" id="slider1" value="0"  min="0" max="2048" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="slider4"><img src="mailicon.png" width="30" height="23" />  &nbsp;&nbsp;  Boie email</label>
+            <input type="range" name="slider2" id="slider2" value="0" min="0" max="1500" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="slider3"><img src="mysql.png" width="30" height="23" /> &nbsp;&nbsp;   Serveur Php / Mysql </label>
+            <input type="range" name="slider3" id="slider3" value="0" min="0" max="5" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="slider4"><img src="desktop.png" width="30" height="23" />&nbsp;&nbsp;Logiciels pré-installés</label>
+            <input type="range" name="slider4" id="slider4" value="0" min="0" max="10" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="slider5"><img src="trafic.png" alt="" width="30" height="23" />&nbsp;&nbsp;Trafic illimité</label>
+            <input type="range" name="slider5" id="slider5" value="0" min="0" max="1500" />
+        </div>
+
+        <div data-role="fieldcontain">
+            <label for="slider6"><img src="padlock.png" alt="" width="30" height="23" />&nbsp;&nbsp; Nombre jours support de SSL HTTPS</label>
+            <input type="range" name="slider6" id="slider6" value="0" min="0" max="30" />
+        </div>
+
+        <div data-role="fieldcontain">
+            <label for="slider7"><img src="ram-memory.png" alt="" width="30" height="23" />Mémoire ram dédié Go </label>
+            <input type="range" name="slider7" id="slider7" value="0" min="0" max="50" />
+        </div>
+
+       
+        <div id="calculer">
+            <div id="calc_title">Consomation</div>
+            <div id="calc"><div id="titlecalc">Par Jour</div><div id="day"> 0 Da</div></div>
+        </div>
+
+    </div>
+
+</body>
+
+<script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js "></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function (e) {
+        $('#indexer3').hide();});
+
+</script>
+</html>

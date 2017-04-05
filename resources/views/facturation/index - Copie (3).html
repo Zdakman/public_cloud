@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>My Page</title> 
+        <style type="text/css">
+            input[type=range] {
+                -webkit-appearance: none;
+                width: 100%;
+                margin: 12.9px 0;
+            }
+            input[type=range]:focus {
+                outline: none;
+            }
+            input[type=range]::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 9.2px;
+                cursor: pointer;
+                box-shadow: 2.5px 2.5px 7.7px #007000, 0px 0px 2.5px #008a00;
+                background: #00aa00;
+                border-radius: 25px;
+                border: 0.2px solid #009300;
+            }
+            input[type=range]::-webkit-slider-thumb {
+                box-shadow: 2.9px 2.9px 7.5px #00a300, 0px 0px 2.9px #00bc00;
+                border: 0px solid rgba(0, 255, 0, 0);
+                height: 35px;
+                width: 30px;
+                border-radius: 8px;
+                background: #fffdff;
+                cursor: pointer;
+                -webkit-appearance: none;
+                margin-top: -13.1px;
+            }
+            input[type=range]:focus::-webkit-slider-runnable-track {
+                background: #00af00;
+            }
+            input[type=range]::-moz-range-track {
+                width: 100%;
+                height: 9.2px;
+                cursor: pointer;
+                box-shadow: 2.5px 2.5px 7.7px #007000, 0px 0px 2.5px #008a00;
+                background: #00aa00;
+                border-radius: 25px;
+                border: 0.2px solid #009300;
+            }
+            input[type=range]::-moz-range-thumb {
+                box-shadow: 2.9px 2.9px 7.5px #00a300, 0px 0px 2.9px #00bc00;
+                border: 0px solid rgba(0, 255, 0, 0);
+                height: 35px;
+                width: 30px;
+                border-radius: 8px;
+                background: #fffdff;
+                cursor: pointer;
+            }
+            input[type=range]::-ms-track {
+                width: 100%;
+                height: 9.2px;
+                cursor: pointer;
+                background: transparent;
+                border-color: transparent;
+                color: transparent;
+            }
+            input[type=range]::-ms-fill-lower {
+                background: #00a500;
+                border: 0.2px solid #009300;
+                border-radius: 50px;
+                box-shadow: 2.5px 2.5px 7.7px #007000, 0px 0px 2.5px #008a00;
+            }
+            input[type=range]::-ms-fill-upper {
+                background: #00aa00;
+                border: 0.2px solid #009300;
+                border-radius: 50px;
+                box-shadow: 2.5px 2.5px 7.7px #007000, 0px 0px 2.5px #008a00;
+            }
+            input[type=range]::-ms-thumb {
+                box-shadow: 2.9px 2.9px 7.5px #00a300, 0px 0px 2.9px #00bc00;
+                border: 0px solid rgba(0, 255, 0, 0);
+                height: 35px;
+                width: 30px;
+                border-radius: 8px;
+                background: #fffdff;
+                cursor: pointer;
+                height: 9.2px;
+            }
+            input[type=range]:focus::-ms-fill-lower {
+                background: #00aa00;
+            }
+            input[type=range]:focus::-ms-fill-upper {
+                background: #00af00;
+            }
+
+        </style>
+
+        <script type="text/javascript">
+            function updateTextInput() {
+
+                var value1 = Number(document.getElementById("range").value);
+                var value2 = Number(document.getElementById("range2").value);
+                var value3 = Number(document.getElementById("range3").value);
+                var total = value1 + value2 + (value3* 10);
+                document.getElementById('value1').innerHTML = "Total:  " + "<b>" + total + "</b>" + " ";
+
+            }
+
+        </script>
+    </head>
+
+    <body>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <h3>first data</h3>
+        <input id="range" type="range" name="rangeInput" max="50" oninput="updateTextInput();"  >
+        <h3>second data</h3>
+
+        <input id="range2" type="range" name="rangeInput" max="50" oninput="updateTextInput();"   >
+        <h3>thierd data</h3>
+
+        <input id="range3" type="range" name="rangeInput" max="50" oninput="updateTextInput();"   >
+
+        <span id="value1"> <b>Total: 0</b>   </span>
+    </body>
+
+</html>

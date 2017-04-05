@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Sum Html Textbox Values using jQuery/JavaScript</title>
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script> 
+        <script type="text/javascript" src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+
+
+    <body>
+
+        
+        <input class="my-input" value="0" min="0" max="300" />
+
+    <input class="my-input"  value="0" min="0" max="300" />
+
+    <input class="my-input"  value="0" min="0" max="300" />
+
+<input  type="text" id="total" value="" />
+
+<script type="text/javascript">
+// just get keyup event
+$('.my-input').on('keyup', function(){
+    var total = 0;
+    // on every keyup, loop all the elements and add all the results
+    $('.my-input').each(function(index, element) {
+        var val = parseFloat($(element).val());
+        if( !isNaN( val )){
+           total += val;
+        }
+    });
+    $('#total').val(total);
+});
+</script>
+    </body>
+</html>
